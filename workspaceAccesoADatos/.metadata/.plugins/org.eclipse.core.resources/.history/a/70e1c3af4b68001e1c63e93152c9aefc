@@ -1,0 +1,16 @@
+package ceu.dam.dao;
+
+import java.util.List;
+
+import ceu.dam.modelo.fecha;
+
+public class fechaDao {
+
+	public fechaDao() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public List<fecha> consultarFechas(){
+		
+	}
+}

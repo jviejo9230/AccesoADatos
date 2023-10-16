@@ -1,0 +1,44 @@
+package ceu.dam.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import ceu.dam.modelo.fecha;
+import ceu.dam.modelo.usuario;
+
+public class fechaDao {
+
+	public fechaDao() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public List<fecha> consultarFechas(Connection conn, Integer anyo, Integer evaluacion) throws SQLException{
+		
+		List<fecha> lista= new ArrayList<>();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		usuario u = new usuario();
+		try {
+			
+			stmt = conn.prepareStatement("select * from fechas where anyo = ? and evaluacion = ?");
+
+			stmt.setInt(1, anyo);
+
+			rs = stmt.executeQuery();
+			
+	
+			return lista;
+		}
+			
+		finally {
+			try {
+				stmt.close();
+			}catch(Exception e) {}
+		}
+	}
+}

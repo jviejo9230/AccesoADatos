@@ -1,0 +1,17 @@
+package ceu.dam.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import ceu.dam.db.OpenConnection;
+import ceu.dam.exception.FctException;
+import ceu.dam.modelo.registro;
+import ceu.dam.dao.registrosDao;
+
+public class ResgistrosService {
+
+	
+}

@@ -1,0 +1,13 @@
+package ceu.dam.service;
+
+import java.util.List;
+
+import ceu.dam.modelo.registro;
+
+public class ResgistrosService {
+	
+	public List<registro> consultarRegistroUsuario(Long idUsuario){
+		
+		
+	}
+}

@@ -1,0 +1,74 @@
+package ceu.dam.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import ceu.dam.dao.usuarioDao;
+import ceu.dam.db.OpenConnection;
+import ceu.dam.exception.AutenticationException;
+import ceu.dam.modelo.usuario;
+
+public class UsuarioService {
+
+private OpenConnection connProvider;
+
+
+	public UsuarioService() {
+		connProvider = new OpenConnection();
+	}
+	
+	public usuario login(String email, String password) throws AutenticationException {
+
+		usuarioDao daoUsuario = new usuarioDao();
+		Connection conn = null;
+		usuario usuario = new usuario();
+
+		try {
+
+			conn = connProvider.abrirConexion();
+			usuario = daoUsuario.consultarUsuario(conn, email);
+			
+			if(usuario.getPassword().equals(password)) {
+				return usuario;
+			}
+			return null;
+		}
+		catch(SQLException e) {
+			System.err.println("No existe ningun usuario");
+			throw new AutenticationException("Error al autentiticar el cliente", e);
+		}
+		finally {
+
+			try {
+
+				conn.close();
+
+			}catch(Exception e) {}
+
+		}
+	}
+	
+	
+	public void altaUsuario(usuario usuario) throws AutenticationException {
+		
+		Connection conn = null;
+		usuario u = new usuario();
+		try {
+			
+			
+		}
+		catch(SQLException e) {
+			System.err.println("No existe ningun usuario");
+			throw new AutenticationException("Error al autentiticar el cliente", e);
+		}
+		finally {
+
+			try {
+
+				conn.close();
+
+			}catch(Exception e) {}
+	}
+
+}
+}

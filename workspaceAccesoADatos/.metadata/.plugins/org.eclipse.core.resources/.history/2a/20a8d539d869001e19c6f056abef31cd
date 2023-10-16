@@ -1,0 +1,17 @@
+package ceu.dam.service;
+
+import java.util.List;
+
+import ceu.dam.modelo.fecha;
+
+public class FechaService {
+
+	public FechaService() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public List<fecha> consultarFecha(){
+		
+		
+	}
+}

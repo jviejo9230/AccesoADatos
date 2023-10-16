@@ -1,0 +1,22 @@
+package ceu.dam.dao;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+
+import ceu.dam.modelo.fecha;
+
+public class fechaDao {
+
+	public fechaDao() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public List<fecha> consultarFechas(Connection conn, Integer anyo, Integer evaluacion){
+		
+		List<fecha> lista= new ArrayList<>();
+		
+		
+		return lista;
+	}
+}

@@ -1,0 +1,21 @@
+package ceu.dam.service;
+
+import java.sql.Connection;
+
+import ceu.dam.dao.usuarioDao;
+import ceu.dam.db.OpenConnection;
+
+public class usuarioService {
+
+	private OpenConnection connProvider;
+	
+	public usuarioService() {
+		connProvider = new OpenConnection();
+	}
+	
+	public void login(String email, String password) {
+		
+		usuarioDao usuarioDao = new usuarioDao();
+		Connection conn = null;
+	}
+}

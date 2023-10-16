@@ -1,0 +1,28 @@
+package ceu.dam.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import ceu.dam.dao.usuarioDao;
+import ceu.dam.db.OpenConnection;
+
+public class usuarioService {
+	
+	public void login(String email, String password) {
+		
+		usuarioDao usuarioDao = new usuarioDao();
+		Connection conn = null;
+		
+		try {
+			conn = new OpenConnection().abrirConexion();
+		}
+		catch(SQLException e) {
+			
+		}
+		finally {
+			try {
+				conn.close();
+			}catch(Exception ignore) {}
+		}
+	}
+}

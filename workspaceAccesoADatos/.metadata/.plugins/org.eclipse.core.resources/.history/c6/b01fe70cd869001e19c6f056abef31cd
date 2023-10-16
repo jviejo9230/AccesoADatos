@@ -1,0 +1,9 @@
+package ceu.dam.service;
+
+public class FechaService {
+
+	public FechaService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

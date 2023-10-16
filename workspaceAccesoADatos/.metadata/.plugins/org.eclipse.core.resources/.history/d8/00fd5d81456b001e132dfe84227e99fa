@@ -1,0 +1,41 @@
+package ceu.dam.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import ceu.dam.db.OpenConnection;
+import ceu.dam.modelo.registro;
+
+public class ResgistrosService {
+
+	private OpenConnection connProvider;
+	
+	public List<registro> consultarRegistroUsuario(Long idUsuario){
+		
+		List<registro> lista = new ArrayList<>();
+		registro r = new registro();
+		Connection conn = null;
+
+		try {
+			conn = connProvider.abrirConexion();
+			
+			if(r.) {
+				
+			}
+			
+			
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				conn.close();
+			}catch(Exception e) {}
+		}
+		return lista;
+	}
+}

@@ -1,0 +1,45 @@
+package ceu.dam.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import ceu.dam.db.OpenConnection;
+import ceu.dam.exception.AutenticationException;
+import ceu.dam.exception.FctException;
+import ceu.dam.modelo.fecha;
+
+public class FechaService {
+
+
+	private OpenConnection connProvider;
+	
+	public List<fecha> consultarFecha(){
+		
+		List<fecha> lista = new ArrayList();
+		Connection conn = null;
+
+		try {
+			conn = connProvider.abrirConexion();
+			
+			if(daoUsuario.consultarUsuario(conn, email) == null) {
+				throw new AutenticationException("El email no existe");
+			}
+			
+			else if(!daoUsuario.consultarUsuario(conn, email).getPassword().equals(password)) {
+				throw new AutenticationException("La contraseña no es correcta");
+			}
+			return daoUsuario.consultarUsuario(conn, email);
+		}
+		catch(SQLException e) {
+			System.err.println("No existe ningun usuario");
+			throw new FctException("Error al autentiticar el cliente", e);
+		}
+		finally {
+			try {
+				conn.close();
+			}catch(Exception e) {}
+		}
+	}
+}

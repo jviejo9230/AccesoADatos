@@ -1,0 +1,9 @@
+package ceu.dam.dao;
+
+public class fechaDao {
+
+	public fechaDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

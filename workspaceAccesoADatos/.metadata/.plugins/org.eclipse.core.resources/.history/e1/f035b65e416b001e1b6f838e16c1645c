@@ -1,0 +1,46 @@
+package ceu.dam.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import ceu.dam.modelo.registro;
+import ceu.dam.modelo.usuario;
+
+public class registrosDao {
+	
+public List<registro> consultarUsuario(Connection conn, Long idUsuario) throws SQLException {
+		
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		List<registro> listaRegistros = new ArrayList<>();
+		usuario u = new usuario();
+		try {
+			
+			stmt = conn.prepareStatement("select * from registros where id_usuario= ?");
+
+			stmt.setLong(1, idUsuario);
+
+			rs = stmt.executeQuery();
+			
+			if(rs.next()){
+				listaRegistros.add(rs.getLong("id_usuario"));
+				
+				return u;
+			}
+			else {
+				return null;
+			}	
+		}
+			
+		finally {
+			try {
+				stmt.close();
+			}catch(Exception e) {}
+		}
+	}
+}

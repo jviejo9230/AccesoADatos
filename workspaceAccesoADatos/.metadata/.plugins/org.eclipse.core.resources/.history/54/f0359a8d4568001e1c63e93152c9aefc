@@ -1,0 +1,53 @@
+package ceu.dam.service;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import ceu.dam.dao.usuarioDao;
+import ceu.dam.db.OpenConnection;
+import ceu.dam.exception.AutenticationException;
+import ceu.dam.modelo.usuario;
+
+public class UsuarioService {
+
+private OpenConnection connProvider;
+
+
+	public UsuarioService() {
+		connProvider = new OpenConnection();
+	}
+	
+	public usuario login(String email, String password) throws AutenticationException {
+
+		usuarioDao daoUsuario = new usuarioDao();
+		Connection conn = null;
+		usuario usuario = new usuario();
+
+		try {
+
+			conn = connProvider.abrirConexion();
+			usuario = daoUsuario.consultarUsuario(conn, email);
+			
+			if(usuario.getEmail().equals(email)) {
+				return usuario;
+			}
+			return null;
+
+		}
+		catch(SQLException e) {
+			System.err.println("Error al obtener el usuario de la  bbdd");
+			throw new AutenticationException("Error al autentiticar el cliente", e);
+		}
+		finally {
+
+			try {
+
+				conn.close();
+
+			}catch(Exception e) {}
+
+		}
+	}
+
+}
+

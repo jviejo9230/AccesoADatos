@@ -1,0 +1,9 @@
+package ceu.dam.service;
+
+public class usuarioService {
+
+	public usuarioService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

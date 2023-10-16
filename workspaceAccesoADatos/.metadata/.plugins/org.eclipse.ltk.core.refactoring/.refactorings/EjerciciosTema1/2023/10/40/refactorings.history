@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;OpenConnection.java&apos; to &apos;CEU-FCT/src/ceu.dam.db&apos;&#x0D;&#x0A;- Original project: &apos;EjerciciosTema1&apos;&#x0D;&#x0A;- Destination element: &apos;CEU-FCT/src/ceu.dam.db&apos;&#x0D;&#x0A;- Original element: &apos;ejercicio3.services.OpenConnection.java&apos;" description="Copy compilation unit" destination="=CEU-FCT/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ceu.dam.db" element1="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ejercicio3.services{OpenConnection.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1696602764358" units="1" version="1.0"/>
+</session>

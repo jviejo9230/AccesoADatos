@@ -1,0 +1,16 @@
+package ceu.dam.service;
+
+import ceu.dam.db.OpenConnection;
+
+public class usuarioService {
+
+	private OpenConnection connProvider;
+	
+	public usuarioService() {
+		connProvider = new OpenConnection();
+	}
+	
+	public void login(String email, String password) {
+		
+	}
+}
